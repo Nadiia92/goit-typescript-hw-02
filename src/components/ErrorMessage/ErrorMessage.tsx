@@ -1,9 +1,13 @@
 /** @format */
 
-import {useEffect} from "react";
+import {FC, useEffect} from "react";
 import toast from "react-hot-toast";
 
-const ErrorMessage = ({showError}) => {
+interface ErrorMessageProps {
+  showError: boolean;
+}
+
+const ErrorMessage: FC<ErrorMessageProps> = ({showError}) => {
   useEffect(() => {
     if (showError) {
       toast.error(
