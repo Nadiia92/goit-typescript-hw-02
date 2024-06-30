@@ -3,7 +3,7 @@
 import {useState, useEffect} from "react";
 import toast, {Toaster} from "react-hot-toast";
 import {getArticles} from "../../api-unsplash";
-
+import {Image} from "../../components/App/App.types";
 import SearchBar from "../SearchBar/SearchBar";
 import ImageGallery from "../ImageGallery/ImageGallery";
 import Loader from "../Loader/Loader";
@@ -17,14 +17,16 @@ import style from "./App.module.css";
 Modal.setAppElement("#root");
 
 function App() {
-  const [isLoading, setLoading] = useState(false);
-  const [articles, setArticles] = useState([]);
-  const [error, setError] = useState(false);
-  const [page, setPage] = useState(1);
-  const [hasLoadMore, setHasLoadMore] = useState(false);
-  const [query, setQuery] = useState("");
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [selectedImageData, setSelectedImageData] = useState(null);
+  const [articles, setArticles] = useState<Image[]>([]);
+  const [isLoading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<boolean>(false);
+  const [page, setPage] = useState<number>(1);
+  const [hasLoadMore, setHasLoadMore] = useState<boolean>(false);
+  const [query, setQuery] = useState<string>("");
+  const [modalIsOpen, setModalIsOpen] = useState<boolean>(false);
+  const [selectedImageData, setSelectedImageData] = useState<Image | null>(
+    null
+  );
 
   useEffect(() => {
     if (!query) return;
@@ -51,7 +53,7 @@ function App() {
     fetchArticles();
   }, [query, page]);
 
-  const handleSearch = (topic) => {
+  const handleSearch = (topic: string) => {
     if (!topic) {
       toast.error("Please enter a search query!");
       setArticles([]);
@@ -67,7 +69,7 @@ function App() {
     setPage((prevPage) => prevPage + 1);
   };
 
-  const openModal = (imageData) => {
+  const openModal = (imageData: Image) => {
     setSelectedImageData(imageData);
     setModalIsOpen(true);
   };

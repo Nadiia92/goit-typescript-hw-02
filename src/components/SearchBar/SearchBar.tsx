@@ -1,15 +1,23 @@
 /** @format */
 
-import {Field, Form, Formik} from "formik";
+import {Field, Form, Formik, FormikHelpers} from "formik";
 import {BsSearch} from "react-icons/bs";
 import style from "./SearchBar.module.css";
+import {FC} from "react";
 
-const SearchBar = ({onSearch}) => {
+interface SearchBarProps {
+  onSearch: (query: string) => void;
+}
+
+const SearchBar: FC<SearchBarProps> = ({onSearch}) => {
   return (
     <header className={style.header}>
       <Formik
         initialValues={{query: ""}}
-        onSubmit={(values, actions) => {
+        onSubmit={(
+          values: {query: string},
+          actions: FormikHelpers<{query: string}>
+        ) => {
           onSearch(values.query);
           actions.resetForm();
         }}>
