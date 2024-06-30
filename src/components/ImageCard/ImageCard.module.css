@@ -1,0 +1,20 @@
+/** @format */
+
+.card {
+  max-width: 450px;
+  max-height: 300px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.card img {
+  width: 450px;
+  height: 300px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}

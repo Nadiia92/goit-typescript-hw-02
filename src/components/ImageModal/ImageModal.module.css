@@ -1,0 +1,9 @@
+/** @format */
+
+.image {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  max-width: 100%;
+  object-fit: contain;
+}

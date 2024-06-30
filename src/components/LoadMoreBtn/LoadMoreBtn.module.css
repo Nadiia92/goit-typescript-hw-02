@@ -1,0 +1,17 @@
+/** @format */
+
+.button {
+  display: block;
+  padding: 10px;
+  font-size: 24px;
+  background-color: aqua;
+  margin-right: auto;
+  margin-left: auto;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.button:hover,
+.button:focus {
+  border-color: chocolate;
+  background-color: rgb(29, 250, 8);
+}

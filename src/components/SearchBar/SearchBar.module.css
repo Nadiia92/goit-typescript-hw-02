@@ -1,0 +1,43 @@
+/** @format */
+
+.header {
+  padding: 20px;
+  background-color: rgb(2, 2, 151);
+  margin-top: 0;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.container {
+  padding: 0;
+  display: flex;
+  gap: 5px;
+  max-width: 500px;
+  background-color: aliceblue;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 12px;
+  overflow: hidden;
+}
+.field {
+  width: 100%;
+  padding: 5px;
+  font-size: 20px;
+  border: none;
+}
+.btn {
+  border: none;
+  background-color: transparent;
+  color: rgb(12, 12, 110);
+  padding: 10px;
+}
+.icon {
+  width: 30px;
+  height: 30px;
+  fill: rgb(19, 194, 51);
+}
+.text {
+  font-size: 26px;
+  color: red;
+  text-align: center;
+}

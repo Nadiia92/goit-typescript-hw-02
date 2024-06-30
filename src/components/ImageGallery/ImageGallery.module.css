@@ -1,0 +1,9 @@
+/** @format */
+
+.gallery {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 10px 30px;
+}
